@@ -1,0 +1,33 @@
+/* CSS.
+   Por ahora sólo podemos hacer estilo básico.
+   TODO: en base a la información del XML, crear
+   encabezados y estilos para hacer que la ley se
+   vea más bonita */
+
+* {
+    font-family: 'Palatino Linotype', 'Palatino', 'Times New Roman', Times, serif;
+}
+
+#container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#container p {
+    text-align: justify;
+    hyphens: auto;
+}
+
+#container .derogado {
+    color: darkgray;
+}
+
+#container .promulgacion {
+    font-style: italic;
+}
+
+#container .anexo {
+    font-size: small;
+    font-style: italic;
+}

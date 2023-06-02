@@ -8,10 +8,16 @@
     font-family: 'Palatino Linotype', 'Palatino', 'Times New Roman', Times, serif;
 }
 
+.layout {
+    display: flex;
+    flex-direction: row
+}
+
 #container {
     margin: 20px;
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }
 
 #container p {

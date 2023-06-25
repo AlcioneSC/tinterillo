@@ -131,8 +131,7 @@ function listStatute() {
 listStatute()
 
 document.getElementById("inputFilter").addEventListener("keyup", () => {
-    let filterText = document.getElementById("inputFilter").value
-    filterText = filterText.toLowerCase()
+    let filterText = document.getElementById("inputFilter").value.toLowerCase()
     let lis = document.querySelectorAll("#indexList li");
     for (let i=0;i < lis.length; i++) {
         let innerLow = lis[i].innerText.toLowerCase()

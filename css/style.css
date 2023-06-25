@@ -37,6 +37,7 @@
 #paralist ul li {
     margin-top: 6px;
     margin-bottom: 6px;
+    cursor: pointer;
 }
 
 #paralist .hidden {

@@ -6,13 +6,14 @@
 
 * {
     font-family: 'Palatino Linotype', 'Palatino', 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .layout {
     display: grid;
     grid-template-columns: 240px 1fr;
-    margin: 0;
-    padding: 0;
 }
 
 #paralist {
@@ -20,23 +21,25 @@
     background-color: tomato;
     align-self: self-start;
     position: sticky;
-    min-height: 97vh;
+    min-height: 100vh;
+    max-height: 100vh;
     overflow: scroll;
     top: 0;
 }
 
 #inputFilter {
     width: 230px;
+    margin: 4px;
 }
 
 #paralist ul {
     list-style: none;
-    padding: 5px;
+    padding: 12px;
 }
 
 #paralist ul li {
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-top: 4px;
+    margin-bottom: 12px;
     cursor: pointer;
 }
 
@@ -45,15 +48,32 @@
 }
 
 #container {
-    margin: 20px;
     display: flex;
     flex-direction: column;
     overflow: auto;
+    padding: 20px;
+    hyphens: auto;
 }
 
 #container p {
     text-align: justify;
     hyphens: auto;
+    padding-top: 9px;
+    padding-bottom: 9px; 
+}
+
+#container h2 {
+    padding-top: 22px;
+    padding-bottom: 10px; 
+}
+
+#container h3 {
+    padding-top: 12px;
+    padding-bottom: 4px; 
+}
+
+#container h4 {
+    padding-top: 10px;
 }
 
 #container .derogado {

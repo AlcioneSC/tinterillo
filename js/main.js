@@ -103,7 +103,7 @@ function listStatute() {
     const paraList = fetch("./data/leyes.json", {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/xml',
+            'Content-Type': 'application/json',
         },
         cache: 'default'
     }).then(response => {

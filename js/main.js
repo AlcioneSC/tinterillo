@@ -55,10 +55,11 @@ function retrieveStatute(statCode) {
             const corrAttr = xmlText[i].getAttribute("tipoParte");
             let corrString = xmlText[i].getElementsByTagName("Texto")[0].innerHTML;
             corrString = corrString.replace("�","í");
-            //regex: retorno de carro + avance de línea + espacio = párrafo
-            corrString = corrString.replace(/[\n\r]+\s{2,}/g,"</p><p>");
             //regex: eliminación de citas legales hardcoded
             corrString = corrString.replace(/(?:\b|(?<=[\,|\.|\)|á|í|ó|\:|\;]))\s{3,}(?:Art|L\.|LEY|Inc|D\.O\.|letra|Nº)+.*/gi,"");
+            //regex: retorno de carro + avance de línea + espacio = párrafo
+            corrString = corrString.replace(/[\n\r]+\s{2,}/g,"</p><p>");
+            corrString = corrString.replace(/\<p\>\s*\<\/p\>/g,"");
             if(corrAttr=="Libro") {
                 corrString = "<h2>" + corrString + "</h2>"
             } else if(corrAttr=="Título") {
@@ -68,7 +69,6 @@ function retrieveStatute(statCode) {
             } else {
                 corrString = "<p>" + corrString + "</p>"
             }
-            corrString = corrString.replace("<p></p>","");
             let para = document.createElement("div");
             para.innerHTML = corrString;
             //Si está derogado, añadimos la clase derogado. Luego CSS va a atenuar el artículo

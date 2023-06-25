@@ -1,9 +1,3 @@
-/* CSS.
-   Por ahora sólo podemos hacer estilo básico.
-   TODO: en base a la información del XML, crear
-   encabezados y estilos para hacer que la ley se
-   vea más bonita */
-
 * {
     font-family: 'Palatino Linotype', 'Palatino', 'Times New Roman', Times, serif;
     margin: 0;
@@ -30,16 +24,15 @@
 #inputFilter {
     width: 230px;
     margin: 4px;
+    font-size: 12pt;
 }
 
 #paralist ul {
     list-style: none;
-    padding: 12px;
 }
 
 #paralist ul li {
-    margin-top: 4px;
-    margin-bottom: 12px;
+    margin: 8pt;
     cursor: pointer;
 }
 
@@ -51,30 +44,38 @@
     display: flex;
     flex-direction: column;
     overflow: auto;
-    padding: 20px;
     hyphens: auto;
-}
-
-#container p {
+    padding: 2em;
     text-align: justify;
-    hyphens: auto;
-    padding-top: 8px;
-    padding-bottom: 8px; 
 }
 
 #container h2 {
-    margin-top: 22px;
-    padding-bottom: 10px; 
+    padding: 1.5em 0 0.2em 0;
+}
+
+#container h2 p {
+    padding: 0.2em 0 0.8em 0;
 }
 
 #container h3 {
-    margin-top: 12px;
-    padding-bottom: 4px; 
+    padding: 1em 0 0.2em 0;
+}
+
+#container h3 p {
+    padding: 0.2em 0 0.8em 0;
 }
 
 #container h4 {
-    padding-top: 10px;
-    padding-bottom: 4px;
+    padding: 1em 0 0.4em 0;
+}
+
+#container h4 p {
+    padding: 0.2em 0 0.4em 0;
+}
+
+#container p {
+    padding: 0.5em 0 0.5em 1em;
+    line-height: 120%;
 }
 
 #container .derogado {

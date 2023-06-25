@@ -54,7 +54,6 @@ function retrieveStatute(statCode) {
             //derogado = ¿Está derogado el artículo?. "derogado" / "no derogado"
             const corrAttr = xmlText[i].getAttribute("tipoParte");
             let corrString = xmlText[i].getElementsByTagName("Texto")[0].innerHTML;
-            //console.log(corrString);
             corrString = corrString.replace("�","í");
             //regex: retorno de carro + avance de línea + espacio = párrafo
             corrString = corrString.replace(/[\n\r]+\s{2,}/g,"</p><p>");
@@ -131,10 +130,10 @@ function listStatute() {
 listStatute()
 
 document.getElementById("inputFilter").addEventListener("keyup", () => {
-    let filterText = document.getElementById("inputFilter").value.toLowerCase()
+    let filterText = document.getElementById("inputFilter").value.toLowerCase();
     let lis = document.querySelectorAll("#indexList li");
     for (let i=0;i < lis.length; i++) {
-        let innerLow = lis[i].innerText.toLowerCase()
+        let innerLow = lis[i].innerText.toLowerCase();
         if(filterText === "" || innerLow.includes(filterText)) {
             lis[i].classList.remove("hidden")
         } else {

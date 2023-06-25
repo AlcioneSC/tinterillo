@@ -1,26 +1,104 @@
 [
     {
         "id": "172986",
-        "desc ": "Código Civil"
+        "desc": "Código Civil",
+        "number": "",
+        "thema": "code"
     },
     {
         "id": "207436",
-        "desc ": "Código del Trabajo"
+        "desc": "Código del Trabajo",
+        "number": "",
+        "thema": "code"
     },
     {
         "id": "1974",
-        "desc ": "Código de Comercio"
+        "desc": "Código de Comercio",
+        "number": "",
+        "thema": "code"
     },
     {
         "id": "6374",
-        "desc ": "Código Tributario"
+        "desc": "Código Tributario",
+        "number": "",
+        "thema": "code"
     },
     {
         "id": "1058072",
-        "desc ": "Ley de Liquidación Concursal"
+        "desc": "Ley de Liquidación Concursal",
+        "number": "20720",
+        "thema": ""
     },
     {
         "id": "1160403",
-        "desc ": "Ley del Consumidor"
+        "desc": "Ley del Consumidor",
+        "number": "19496",
+        "thema": ""
+    },
+    {
+        "id": "213004",
+        "desc": "Ley de Compras Públicas",
+        "number": "19886",
+        "thema": ""
+    },
+    {
+        "id": "210676",
+        "desc": "Ley de Bases de los Procedimientos Administrativos",
+        "number": "19880",
+        "thema": ""
+    },
+    {
+        "id": "1158549",
+        "desc": "Ley de Migración y Extranjería",
+        "number": "21325",
+        "thema": "immigration"
+    },
+    {
+        "id": "1172573",
+        "desc": "Reglamento de Migración y Extranjería",
+        "number": "296",
+        "thema": "immigration"
+    },
+    {
+        "id": "1176043",
+        "desc": "Reglamento de Subcategorías de Residencia Temporal",
+        "number": "177",
+        "thema": "immigration"
+    },
+    {
+        "id": "1173324",
+        "desc": "Reglamento de Subcategorías de Permanencia Transitoria",
+        "number": "23",
+        "thema": "immigration"
+    },
+    {
+        "id": "1188503",
+        "desc": "Monto mínimo para permanencia en Chile",
+        "number": "3464",
+        "thema": "immigration"
+    },
+    {
+        "id": "1165823",
+        "desc": "Planta del Servicio Nacional de Migraciones",
+        "number": "1",
+        "thema": "immigration"
+    },
+    {
+        "id": "1012435",
+        "desc": "Ley sobre Protección de Refugiados",
+        "number": "20430",
+        "thema": "immigration"
+    },
+    {
+        "id": "1023156",
+        "desc": "Reglamento sobre Protección de Refugiados",
+        "number": "837",
+        "thema": "immigration"
+    },
+    {
+        "id": "236392",
+        "desc": "Estatuto Administrativo",
+        "number": "18834",
+        "thema": "state"
     }
 ]

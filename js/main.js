@@ -10,6 +10,12 @@ https://www.bcn.cl/leychile/consulta/legislacion_abierta_web_service
 */
 
 function retrieveStatute(statCode) {
+    // cleanup
+    const sect = document.querySelector("#container");
+    while(sect.firstChild) {
+        sect.firstChild.remove();
+    }
+
     /* Se tuvo que introducir aquí un proxy CORS. Sin el proxy CORS
     el código no funciona. Eso es porque el servidor de LeyChile
     está mal configurado. */
@@ -32,7 +38,6 @@ function retrieveStatute(statCode) {
         const xmlStatute = Parser.parseFromString(value,"application/xml");
         const xmlHeader = xmlStatute.getElementsByTagName("Encabezado")[0];
         let xmlTitle = xmlStatute.getElementsByTagName("TituloNorma")[0].innerHTML;
-        const sect = document.querySelector("#container");
         let headerTXT = document.createElement("h1");
         let headerBase = document.createElement("p")
         headerTXT.innerHTML = xmlTitle;
@@ -49,7 +54,7 @@ function retrieveStatute(statCode) {
             //derogado = ¿Está derogado el artículo?. "derogado" / "no derogado"
             const corrAttr = xmlText[i].getAttribute("tipoParte");
             let corrString = xmlText[i].getElementsByTagName("Texto")[0].innerHTML;
-            console.log(corrString);
+            //console.log(corrString);
             corrString = corrString.replace("�","í");
             //regex: retorno de carro + avance de línea + espacio = párrafo
             corrString = corrString.replace(/[\n\r]+\s{2,}/g,"</p><p>");
@@ -94,7 +99,47 @@ function retrieveStatute(statCode) {
     });
 }
 
+function listStatute() {
+    const paraList = fetch("./data/leyes.json", {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/xml',
+        },
+        cache: 'default'
+    }).then(response => {
+        if (response.ok) {
+            console.log("Lista correcta");
+            return response.text();
+        }
+    }).then((value) => {
+        const sect = document.querySelector("#indexList");
+        const statArray = JSON.parse(value);
+        for (let i=0; i < statArray.length; i++) {
+            const itemL = document.createElement("li");
+            itemL.innerText = statArray[i].desc;
+            itemL.setAttribute("onclick",`retrieveStatute(${statArray[i].id})`)
+            sect.appendChild(itemL)
+        }
+    }).catch((err) => {
+        console.log(err)
+    });
+}
+
 //El argumento es el número de la ley. Se obtiene de LeyChile.
 //TODO: esto es perfecto para consultar una serie de normas en una 
 //base de datos JSON separada.
-retrieveStatute(213004)
+listStatute()
+
+document.getElementById("inputFilter").addEventListener("keyup", () => {
+    let filterText = document.getElementById("inputFilter").value
+    filterText = filterText.toLowerCase()
+    let lis = document.querySelectorAll("#indexList li");
+    for (let i=0;i < lis.length; i++) {
+        let innerLow = lis[i].innerText.toLowerCase()
+        if(filterText === "" || innerLow.includes(filterText)) {
+            lis[i].classList.remove("hidden")
+        } else {
+            lis[i].classList.add("hidden")
+        }
+    }
+})

@@ -9,8 +9,38 @@
 }
 
 .layout {
-    display: flex;
-    flex-direction: row
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    margin: 0;
+    padding: 0;
+}
+
+#paralist {
+    width: 240px;
+    background-color: tomato;
+    align-self: self-start;
+    position: sticky;
+    min-height: 97vh;
+    overflow: scroll;
+    top: 0;
+}
+
+#inputFilter {
+    width: 230px;
+}
+
+#paralist ul {
+    list-style: none;
+    padding: 5px;
+}
+
+#paralist ul li {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+#paralist .hidden {
+    display: none;
 }
 
 #container {

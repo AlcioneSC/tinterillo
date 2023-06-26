@@ -58,21 +58,22 @@ function retrieveStatute(statCode) {
             //regex: eliminación de citas legales hardcoded
             corrString = corrString.replace(/(?:\b|(?<=[\,|\.|\)|á|í|ó|\:|\;]))\s{3,}(?:Art|L\.|LEY|Inc|D\.O\.|letra|Nº)+.*/gi,"");
             //regex: retorno de carro + avance de línea + espacio = párrafo
-            corrString = corrString.replace(/[\n\r]+\s{2,}/g,"</p><p>");
-            corrString = corrString.replace(/\<p\>\s*\<\/p\>/g,"");
+            corrString = corrString.replace(/\s{3,}/g,"</p><p>");
+            corrString = corrString.replace(/^\<\/p>/g,"");
+            corrString = corrString.replace(/\<p\>$/g,"")
             if(corrAttr=="Libro") {
                 corrString = "<h2>" + corrString + "</h2>"
-            } else if(corrAttr=="Título") {
+            } else if(corrAttr=="Título"||corrAttr=="Capítulo") {
                 corrString = "<h3>" + corrString + "</h3>"
-            } else if(corrAttr=="Capítulo"||corrAttr=="Párrafo"||corrAttr=="Enumeración") {
+            } else if(corrAttr=="Párrafo"||corrAttr=="Enumeración") {
                 corrString = "<h4>" + corrString + "</h4>"
-            } else {
-                corrString = "<p>" + corrString + "</p>"
+            } else if(corrAttr=="Parágrafo") {
+                corrString = "<h5>" + corrString + "</h5>"
             }
             let para = document.createElement("div");
             para.innerHTML = corrString;
             //Si está derogado, añadimos la clase derogado. Luego CSS va a atenuar el artículo
-            if(xmlText[i].getAttribute("derogado")=="derogado") {
+            if(xmlText[i].getAttribute("derogado")==="derogado") {
                 para.classList.add("derogado");
             }
             sect.appendChild(para)

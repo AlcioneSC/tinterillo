@@ -49,32 +49,45 @@
     text-align: justify;
 }
 
+#container div {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#container h1 {
+    text-align: center;
+    padding: 1.5em 0 0.2em 0;
+}
+
 #container h2 {
+    text-align: center;
     padding: 1.5em 0 0.2em 0;
 }
 
 #container h2 p {
-    padding: 0.2em 0 0.8em 0;
+    padding: 0;
 }
 
 #container h3 {
+    text-align: center;
     padding: 1em 0 0.2em 0;
 }
 
 #container h3 p {
-    padding: 0.2em 0 0.8em 0;
+    padding: 0;
 }
 
 #container h4 {
+    text-align: center;
     padding: 1em 0 0.4em 0;
 }
 
 #container h4 p {
-    padding: 0.2em 0 0.4em 0;
+    padding: 0;
 }
 
 #container p {
-    padding: 0.5em 0 0.5em 1em;
+    padding: 0.3em 0 0.3em 0;
     line-height: 120%;
 }
 
